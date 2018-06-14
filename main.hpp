@@ -18,15 +18,15 @@ void swap(std::string*, std::string*);
 
 void sortStudents(std::string arr[][3], int sortCriteria)
 {
-	int smallerNumberSize = 0;
+    int smallerNumberSize = 0;
     for(int i=0; i<STUDENTS_LENGTH; i++)  //primary for loop
     {
         for(int j=0; j<STUDENTS_LENGTH; j++)  //secondary for loop
         {
-			std::string *primaryStr = &arr[i][sortCriteria];
+	    std::string *primaryStr = &arr[i][sortCriteria];
             std::string *secondaryStr = &arr[j][sortCriteria];
-			if(sortCriteria == NUMBER)
-			{
+	    if(sortCriteria == NUMBER)
+	    {
                 int primaryNumber = std::stoi((*primaryStr).substr(3, (*primaryStr).size()-1));
                 int secondaryNumber = std::stoi((*secondaryStr).substr(3, (*secondaryStr).size()-1));
                 if(primaryNumber < secondaryNumber)
@@ -34,7 +34,7 @@ void sortStudents(std::string arr[][3], int sortCriteria)
                     swap(primaryStr, secondaryStr);
                 }    
             }
-			else if((*primaryStr).compare(*secondaryStr) < 0)
+	    else if((*primaryStr).compare(*secondaryStr) < 0)
             {
                 swap(primaryStr, secondaryStr);
             }
